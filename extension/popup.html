@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suno AI Suite</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #101015;
+      color: #e6e6ec;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(255, 82, 82, 0.15);
+      color: #ff5252;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 600;
+    }
+    .status-badge.online {
+      background: rgba(0, 230, 118, 0.15);
+      color: #00e676;
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #88889a;
+      margin-bottom: 6px;
+    }
+    .card-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: none;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #ff007f, #7928ca);
+      color: #fff;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-accent {
+      background: linear-gradient(135deg, #00c853, #00b0ff);
+      color: #fff;
+    }
+    .btn-accent:hover { opacity: 0.9; }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e2ec;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.14); }
+    .footer {
+      text-align: center;
+      font-size: 11px;
+      color: #66667a;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title">🎵 Suno Bridge & Suite</div>
+    <div class="status-badge" id="server-status">
+      <div class="status-dot"></div>
+      <span id="server-status-text">Memeriksa...</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Server Downloader Lokal</div>
+    <div class="card-value" id="queue-info">localhost:3000</div>
+    <div style="font-size: 11px; color: #88889a; margin-top: 4px;" id="server-detail">
+      Antrean: - | Terdownload: -
+    </div>
+  </div>
+
+  <button class="btn btn-accent" id="open-generator-btn">
+    ⚡ Buka Batch Generator di Suno
+  </button>
+  <button class="btn btn-primary" id="open-suno-btn">
+    🌐 Buka Suno Library (Unduh Lagu)
+  </button>
+  <button class="btn btn-secondary" id="open-dashboard-btn">
+    🖥️ Buka Control Center (localhost:3000)
+  </button>
+  <button class="btn btn-secondary" id="open-folder-btn">
+    📂 Buka Folder Hasil Unduhan
+  </button>
+
+  <div class="footer">Suno AI Downloader & Batch Generator v1.2</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

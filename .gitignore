@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Downloaded audio files (copyrighted content from Suno)
+downloads/
+*.mp3
+*.m4a
+*.wav
+*.ogg
+*.flac
+
+# Environment & secrets (just in case)
+.env
+.env.*
+*.key
+*.pem
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+*.log

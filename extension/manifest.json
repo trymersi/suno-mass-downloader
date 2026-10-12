@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Suno AI Downloader Bridge",
+  "version": "1.0.0",
+  "description": "Deteksi semua lagu Suno AI di akun Anda dan unduh langsung ke komputer lokal secara otomatis.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://suno.com/*",
+    "https://*.suno.com/*",
+    "http://localhost:3000/*",
+    "http://127.0.0.1:3000/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Suno AI Downloader"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://suno.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["https://suno.com/*"]
+    }
+  ]
+}
